@@ -20,8 +20,71 @@
   </head>
   <body>
     <div class="background"></div>
-    0000 0000 0000 0000 Jane Appleseed 00/00 000 Cardholder Name e.g. Jane
-    Appleseed Card Number e.g. 1234 5678 9123 0000 Exp. Date (MM/YY) MM YY CVC
-    e.g. 123 Confirm Thank you! We've added your card details Continue
+    <div class="card-back"></div>
+    <div class="card-front"></div>
+
+    <div class="container">0000 0000 0000 0000 Jane Appleseed 00/00 000</div>
+
+    <form>
+      <div>
+        <label>CARDHOLDER NAME</label>
+        <input
+          class="full-name"
+          type="text"
+          id="full-name"
+          name="full-name"
+          placeholder="e.g. Jane Appleseed"
+        />
+      </div>
+
+      <div>
+        <label>CARD NUMBER</label>
+        <input
+          class="card-number"
+          type="number"
+          name="card-number"
+          id="card-number"
+          placeholder="e.g. 1234 5678 9123 0000"
+          maxlength="16"
+        />
+      </div>
+
+      <div class="exp-date-cvc-container">
+        <div class="exp-date">
+          <label>EXP. DATE (MM/YY)</label>
+          <div class="mmyy-blanks">
+            <input
+              type="number"
+              class="exp-date-blank"
+              name="exp-date"
+              id="exp-date"
+              placeholder="MM"
+            />
+            <input
+              type="number"
+              class="exp-date-blank"
+              name="exp-date"
+              id="exp-date"
+              placeholder="YY"
+            />
+          </div>
+        </div>
+
+        <div class="cvc">
+          <label>CVC</label>
+          <input
+            type="number"
+            class="cvc-blank"
+            name="CVC"
+            id="CVC"
+            placeholder="e.g. 123"
+          />
+        </div>
+      </div>
+
+      <div><button>Confirm</button></div>
+    </form>
+
+    <!-- Thank you! We've added your card details Continue -->
   </body>
 </html>
