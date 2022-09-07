@@ -23,14 +23,30 @@ form {
 /* .card-back {
   background-image: url("./images/bg-card-back.png");
   position: relative;
-  top: -240px;
-  left: 70px;
-  height: 30vh;
-  width: 300px;
 } */
 
+.background {
+  position: relative;
+  /* Create a relative div that is placed in the flow of the page; place the base image first as relative so that the div knows how big it should be; place the overlays as absolutes relative to the upper left of the first image. The trick is to get the relatives and absolutes correct.*/
+  top: 0;
+  left: 0;
+}
+
+.card-front {
+  width: 300px;
+  position: relative;
+  top: 100px;
+  left: 15px;
+}
+
+.card-back {
+  width: 300px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
 label {
-  /* text-transform: capitalize; */
   color: hsl(278, 68%, 11%);
   font-size: 13px;
   letter-spacing: 0.12rem;
@@ -38,18 +54,21 @@ label {
 
 *::placeholder {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 11px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
   color: lightgray;
 }
 
 input {
   border: 1px solid lightgray;
-  border-radius: 5px;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 8px 0 15px 0;
 }
 
 .full-name,
 .card-number {
-  width: 90%;
+  width: 100%;
 }
 
 .exp-date {
@@ -63,6 +82,7 @@ input {
 
 .mmyy-blanks {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .cvc {
@@ -77,6 +97,7 @@ input {
 
 button {
   font-family: inherit;
+  font-size: 18px;
   background-color: hsl(278, 68%, 11%);
   border: 1px solid hsl(278, 68%, 11%);
   color: white;
