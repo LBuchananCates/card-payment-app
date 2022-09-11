@@ -11,7 +11,12 @@ form {
   display: flex; /* make entire form relative to color above it*/
   flex-direction: column;
   padding: 25px;
-  padding-top: 70px;
+  padding-top: 115px;
+}
+
+input:focus {
+  /*FIX FOCUS COLOR */
+  border: 1px solid green !important;
 }
 
 button {
@@ -43,7 +48,7 @@ button {
   z-index: 3; /* put .card-front above .card-back and .background */
   width: 285px; /* LEAVE THIS */
   position: relative; /* do not use flexbox for card items */
-  top: 130px;
+  top: 80px;
   left: 15px;
 }
 
@@ -57,7 +62,7 @@ button {
 
 label {
   color: hsl(278, 68%, 11%);
-  font-size: 13px;
+  font-size: 12px; /* 11 or 12 ???? */
   letter-spacing: 0.12rem;
 }
 
@@ -71,7 +76,7 @@ label {
 input {
   border: 1px solid lightgray;
   border-radius: 8px;
-  padding: 10px;
+  padding: 15px;
   margin: 8px 0 15px 0;
 }
 
@@ -82,18 +87,12 @@ input {
 
 .exp-date {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* DONT CHANGE THS */
+  width: 325px;
 }
 
 .exp-date-blank {
   width: 60px;
-}
-
-.mmyy-blanks {
-  display: flex;
-  /* justify-content: flex-start; */
-  justify-content: space-between;
-  margin-right: 10px; /* might not be correct */
 }
 
 .cvc {
@@ -106,6 +105,11 @@ input {
   flex-direction: row;
   /* align-content: start; */
   /* justify-content: space-between; */
+}
+
+.mmyy-blanks {
+  display: flex;
+  justify-content: space-between;
 }
 
 .fake-card-container {
@@ -134,4 +138,10 @@ input {
   top: 95%;
   right: 36%;
   font-size: 12px;
+}
+
+.fake-cvc {
+  position: absolute;
+  font-size: 11px;
+  letter-spacing: 0.2em;
 }
