@@ -187,19 +187,20 @@ input {
     padding: 230px;
   }
 
-  .card-front {
+  .background .card-front {
     position: relative;
+    width: 285px;
+    height: 156px;
+    background-repeat: no-repeat; /* leave this */
     left: 30%;
     top: 25%;
-    background-size: contain;
     z-index: 3;
   }
 
-  .card-back {
+  .background .card-back {
     background-image: url(./images/bg-card-back.png);
-    position: relative;
     left: 50%;
     top: 30%;
-    background-size: contain;
+    background-repeat: no-repeat; /* leave this */
   }
 }
