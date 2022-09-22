@@ -21,7 +21,7 @@
   <body>
     <div class="background">
       <div class="card-front">
-        <div class="fake-card-number">0000 0000 0000 0000</div>
+        <div class="fake-card-number" id="fake-number">0000 0000 0000 0000</div>
         <div class="fake-card-name">JANE APPLESEED</div>
         <div class="fake-expiration">00/00</div>
       </div>
@@ -45,6 +45,7 @@
       <div>
         <label>CARD NUMBER</label>
         <input
+          for="card-number"
           class="card-number"
           type="number"
           name="card-number"
@@ -86,9 +87,10 @@
         </div>
       </div>
 
-      <div><button>Confirm</button></div>
+      <div><button id="confirm-button">Confirm</button></div>
     </form>
 
     <!-- Thank you! We've added your card details Continue -->
+    <script src="card-payment.js"></script>
   </body>
 </html>
