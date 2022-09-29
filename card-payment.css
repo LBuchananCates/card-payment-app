@@ -72,6 +72,21 @@ button {
   right: 7%;
 }
 
+input:focus,
+textarea:focus {
+  border: 1px solid hsl(249, 99%, 64%) !important;
+  box-shadow: 0 0 3px hsl(249, 99%, 64%) !important;
+  -moz-box-shadow: 0 0 3px hsl(249, 99%, 64%) !important;
+  -webkit-box-shadow: 0 0 3px hsl(249, 99%, 64%) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline-offset: 0px !important;
+  outline: none !important;
+}
+
 label {
   color: hsl(278, 68%, 11%);
   font-size: 12px; /* 11 or 12 ???? */

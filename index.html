@@ -30,7 +30,8 @@
       </div>
     </div>
 
-    <form>
+    <div id="error"></div>
+    <form id="form">
       <div>
         <label>CARDHOLDER NAME</label>
         <input
@@ -63,15 +64,17 @@
               type="number"
               class="exp-date-blank"
               name="exp-date"
-              id="exp-date"
+              id="month"
               placeholder="MM"
+              maxlength="2"
             />
             <input
               type="number"
               class="exp-date-blank"
               name="exp-date"
-              id="exp-date"
+              id="year"
               placeholder="YY"
+              maxlength="2"
             />
 
             <div class="cvc">
@@ -81,6 +84,7 @@
                 name="CVC"
                 id="CVC"
                 placeholder="e.g. 123"
+                maxlength="3"
               />
             </div>
           </div>
