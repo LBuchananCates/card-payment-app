@@ -68,7 +68,7 @@
               maxlength="2"
             />
             <i class="fas exclamation-circle"></i>
-            <p id="error">Can't be blank</p>
+            <!-- <small id="error" class="error-message">Can't be blank</small> -->
 
             <input
               type="number"
@@ -79,7 +79,7 @@
               maxlength="2"
             />
             <i class="fas exclamation-circle"></i>
-            <p id="error">Can't be blank</p>
+            <small id="error" class="error-message">Can't be blank</small>
 
             <div class="cvc">
               <input
@@ -91,7 +91,7 @@
                 maxlength="3"
               />
               <i class="fas exclamation-circle"></i>
-              <p id="error">Can't be blank</p>
+              <!-- <small id="error" class="error-message">Can't be blank</small> -->
             </div>
           </div>
         </div>
@@ -99,10 +99,14 @@
 
       <div><button id="confirm-button">Confirm</button></div>
     </form>
+
     <div id="confirmation-message" class="confirmation-message">
       <h1>Thank you! We've added your card details</h1>
-      <button class="continue-button" id="continue-button">Continue</button>
+      <button class="continue-button" type="button" id="continue-button">
+        Continue
+      </button>
     </div>
+
     <script src="card-payment.js"></script>
   </body>
 </html>
