@@ -1,93 +1,80 @@
-const month = document.querySelector("#month");
-const year = document.querySelector("#year");
-const cvc = document.querySelector("#CVC");
+const cardName = document.querySelector("#full-name");
+const cardNumber = document.querySelector("#card-number");
+const cardMonth = document.querySelector("#month");
+const cardYear = document.querySelector("#year");
+const cardCVC = document.querySelector("#CVC");
+
 const errorMessage = document.querySelector("error-border");
 const confirmButton = document.querySelector("#confirm-button");
 const confirmationMessage = document.querySelector("#confirmation-message");
 const showError = document.querySelector("#error");
 
-// to-do:
-// 2) if all info entered correctly, confirm button should replace 16 digit number with # entered in cardnumber blank and cvc
-// 3) confirm button should also take you to pop up that says thank you for submitting
+const form = document.querySelector("#form");
 
+// if someone fucks up the form, show these error features
 function showErrorBorder(submitCardInfo) {
-  if (month.value === "" || month.value == null) {
-    month.classList.add("error-border");
-    // month.classList.add("error-message");
+  if (cardMonth.value === "" || cardMonth.value == null) {
+    // turns border red
+    cardMonth.classList.add("error-border");
+    // displays error message
+    showError.style.visibility = "visible";
   }
-  if (year.value === "" || year.value == null) {
-    year.classList.add("error-border");
-    // year.classList.add("error-message");
+
+  if (cardYear.value === "" || cardYear.value == null) {
+    // turns border red
+    cardYear.classList.add("error-border");
+    // displays error message
+    showError.style.visibility = "visible";
   }
-  if (cvc.value === "" || cvc.value == null) {
-    cvc.classList.add("error-border");
-    // cvc.classList.add("error-message");
+
+  if (cardCVC.value === "" || cardCVC.value == null) {
+    // turns border red
+    cardCVC.classList.add("error-border");
+    // displays error message
+    showError.style.visibility = "visible";
   }
+  // when clicking submit with errors, doesn't refresh page, displays errors
   submitCardInfo.preventDefault();
 }
 confirmButton.addEventListener("click", showErrorBorder);
 
-const checkMonth = () => {
-  let valid = false;
-  if (!isRequired(month)) {
-    showError(month, "Cannot be blank.");
-  } else {
-    showSuccess(month);
-    valid = true;
-  }
-  return valid;
-};
-
-const checkYear = () => {
-  let valid = false;
-  if (!isRequired(year)) {
-    showError(year, "Cannot be blank.");
-  } else {
-    showSuccess(year);
-    valid = true;
-  }
-  return valid;
-};
-
-const checkCVC = () => {
-  let valid = false;
-  if (!isRequired(cvc)) {
-    showError(cvc, "Cannot be blank.");
-  } else {
-    showSuccess(cvc);
-    valid = true;
-  }
-  return valid;
-};
+// everything above is correct; do not change!!! //
 
 form.addEventListener("submit", function (e) {
   // prevent the form from submitting
   e.preventDefault();
-
-  // validate forms
-  let isMonthValid = checkMonth(),
-    isYearValid = checkYear(),
-    isCVCValid = checkCVC();
-
-  let isFormValid = isMonthValid && isYearValid && isCVCValid;
-
-  // submit to the server if the form is valid
-  if (isFormValid) {
-  }
 });
-// function submitForm() {
-//   if ((month.value = true)) {
-//     submitCardInfo.preventDefault();
-//   }
-//   if ((year.value = true)) {
-//     submitCardInfo.preventDefault();
-//   }
-//   if ((cvc.value = true)) {
-//     submitCardInfo.preventDefault();
-//   }
-// }
+
 // confirmButton.addEventListener("click", confirmationMessage);
 
-// if all blanks are filled in, submit form and display confirmation messages
-// then submit form = show #confirmation-message "thank you we've added your card details continue
-// button LEAVE THIS and MATCH input card-number with that of card number content of div #fake-number
+const exampleCardNumber = document.querySelector("#example-number");
+const exampleCardName = document.querySelector("#example-name");
+const exampleCardMonth = document.querySelector("#example-month");
+const exampleCardCVC = document.querySelector("#example-cvc");
+const exampleCardYear = document.querySelector("#example-year");
+
+cardName.oninput = () => {
+  exampleCardName.innerText = cardName.value;
+  cardName.classList.remove("error");
+};
+
+cardNumber.oninput = () => {
+  exampleCardNumber.innerText = cardNumber.value;
+  cardNumber.classList.remove("error");
+  // space numbers out every 4 numbers
+};
+
+cardMonth.oninput = () => {
+  exampleCardMonth.innerText = cardMonth.value;
+  cardMonth.classList.remove("error");
+};
+
+cardYear.oninput = () => {
+  exampleCardYear.innerText = cardYear.value;
+  cardYear.classList.remove("error");
+};
+
+cardCVC.oninput = () => {
+  exampleCardCVC.innerText = cardCVC.value;
+  cardCVC.classList.remove("error");
+};

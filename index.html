@@ -21,12 +21,16 @@
   <body>
     <div class="background">
       <div class="card-front">
-        <div class="fake-card-number" id="fake-number">0000 0000 0000 0000</div>
-        <div class="fake-card-name">JANE APPLESEED</div>
-        <div class="fake-expiration">00/00</div>
+        <div class="fake-card-number" id="example-number">
+          0000 0000 0000 0000
+        </div>
+        <div class="fake-card-name" id="example-name">JANE APPLESEED</div>
+        <div class="fake-expiration" id="example-month">
+          00/<span id="example-year">00</span>
+        </div>
       </div>
       <div class="card-back">
-        <div class="fake-cvc">000</div>
+        <div class="example-cvc" id="example-cvc">000</div>
       </div>
     </div>
 
@@ -67,8 +71,7 @@
               placeholder="MM"
               maxlength="2"
             />
-            <i class="fas exclamation-circle"></i>
-            <!-- <small id="error" class="error-message">Can't be blank</small> -->
+            <small id="error" class="error-message">Can't be blank</small>
 
             <input
               type="number"
@@ -78,8 +81,6 @@
               placeholder="YY"
               maxlength="2"
             />
-            <i class="fas exclamation-circle"></i>
-            <small id="error" class="error-message">Can't be blank</small>
 
             <div class="cvc">
               <input
@@ -90,9 +91,8 @@
                 placeholder="e.g. 123"
                 maxlength="3"
               />
-              <i class="fas exclamation-circle"></i>
-              <!-- <small id="error" class="error-message">Can't be blank</small> -->
             </div>
+            <small id="error" class="error-message">Can't be blank</small>
           </div>
         </div>
       </div>

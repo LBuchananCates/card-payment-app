@@ -112,23 +112,12 @@ input {
   margin: 8px 0 15px 0;
 }
 
-/* #error {
-  visibility: hidden;
-  position: absolute;
-} */
-
-.mmyy-blanks small {
-  color: hsl(0, 100%, 66%);
+small {
+  color: hsl(0, 100%, 66%); /* LEAVE AS IS */
   visibility: hidden;
   position: absolute; /* LEAVE AS IS */
+  margin-top: 60px; /* LEAVE AS IS */
 }
-
-/* .error-message {
-  color: red;
-  position: absolute;
-  visibility: visible;
-  padding-top: 40px;
-} IDK WHATS GOING ON */
 
 .full-name,
 .card-number {
@@ -197,7 +186,7 @@ input {
   color: white;
 }
 
-.fake-cvc {
+.example-cvc {
   position: absolute;
   font-size: 12px; /* LEAVE THIS HERE */
   letter-spacing: 0.2em;
