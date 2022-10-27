@@ -45,9 +45,8 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
 });
 
-// confirmButton.addEventListener("click", confirmationMessage);
-
-const exampleCardNumber = document.querySelector("#example-number");
+// this allows card info input to replace the example card info shown on the card images //
+let exampleCardNumber = document.querySelector("#example-number");
 const exampleCardName = document.querySelector("#example-name");
 const exampleCardMonth = document.querySelector("#example-month");
 const exampleCardCVC = document.querySelector("#example-cvc");
