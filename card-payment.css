@@ -198,7 +198,7 @@ small {
 
 .confirmation-message {
   visibility: hidden;
-  position: absolute;
+  /* position: absolute; */
 }
 
 @media screen and (min-width: 1440px) {

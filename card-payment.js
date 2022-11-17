@@ -3,10 +3,9 @@ const cardNumber = document.querySelector("#card-number");
 const cardMonth = document.querySelector("#month");
 const cardYear = document.querySelector("#year");
 const cardCVC = document.querySelector("#CVC");
-
-const errorMessage = document.querySelector("error-border");
 const confirmButton = document.querySelector("#confirm-button");
-const confirmationMessage = document.querySelector("#confirmation-message");
+
+const errorMessage = document.querySelector("#error-border");
 const showError = document.querySelector("#error");
 
 const form = document.querySelector("#form");
@@ -40,13 +39,8 @@ confirmButton.addEventListener("click", showErrorBorder);
 
 // everything above is correct; do not change!!! //
 
-form.addEventListener("submit", function (e) {
-  // prevent the form from submitting
-  e.preventDefault();
-});
-
-// this allows card info input to replace the example card info shown on the card images //
-let exampleCardNumber = document.querySelector("#example-number");
+// allows card info input to replace example card info shown on card images //
+const exampleCardNumber = document.querySelector("#example-number");
 const exampleCardName = document.querySelector("#example-name");
 const exampleCardMonth = document.querySelector("#example-month");
 const exampleCardCVC = document.querySelector("#example-cvc");
@@ -60,8 +54,11 @@ cardName.oninput = () => {
 cardNumber.oninput = () => {
   exampleCardNumber.innerText = cardNumber.value;
   cardNumber.classList.remove("error");
+  // exampleCardNumber.innerText.replace(" ")
   // space numbers out every 4 numbers
 };
+// const regExp = /d{4}[ -]?\d{4}[ -]?\d{4}[ -]?\d{4}/g;
+// /^4[0-9]{12}(?:[0-9]{3})?$/g;
 
 cardMonth.oninput = () => {
   exampleCardMonth.innerText = cardMonth.value;
@@ -77,3 +74,30 @@ cardCVC.oninput = () => {
   exampleCardCVC.innerText = cardCVC.value;
   cardCVC.classList.remove("error");
 };
+
+// if information correct, hide form/display confirmation message
+const confirmationMessage = document.querySelector("#confirmation-message");
+
+// function showConfirmationMessage(correctInformation)
+// form.addEventListener("submit", confirmationMessage); // or //
+// form.addEventListener("submit", submitCardInfo)
+
+let completedForm = () => {
+  confirmationMessage.classList.add("#success");
+  confirmationMessage.style.visiblity = "visible";
+};
+
+//create separate function for displaying confirmation message//
+// function displayConfirmationMessage(submitCardInfo) {
+//   if (cardName.value === filledin) {
+//   }
+//   confirmButton.addEventListener("click", submitCardInfo);
+// }
+
+confirmButton.addEventListener("click", function (e) {
+  form.style.visibility = "hidden";
+  console.log("ran");
+});
+
+// confirmButton.addEventListener("click", showConfirmationMessage);
+// // if all info filled out, HIDE form tag and display confirmation message
