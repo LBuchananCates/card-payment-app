@@ -78,26 +78,7 @@ cardCVC.oninput = () => {
 // if information correct, hide form/display confirmation message
 const confirmationMessage = document.querySelector("#confirmation-message");
 
-// function showConfirmationMessage(correctInformation)
-// form.addEventListener("submit", confirmationMessage); // or //
-// form.addEventListener("submit", submitCardInfo)
-
-let completedForm = () => {
-  confirmationMessage.classList.add("#success");
-  confirmationMessage.style.visiblity = "visible";
-};
-
-//create separate function for displaying confirmation message//
-// function displayConfirmationMessage(submitCardInfo) {
-//   if (cardName.value === filledin) {
-//   }
-//   confirmButton.addEventListener("click", submitCardInfo);
-// }
-
 confirmButton.addEventListener("click", function (e) {
   form.style.visibility = "hidden";
-  console.log("ran");
+  confirmationMessage.style.visiblity = "visible";
 });
-
-// confirmButton.addEventListener("click", showConfirmationMessage);
-// // if all info filled out, HIDE form tag and display confirmation message
