@@ -19,6 +19,7 @@ form {
   flex-direction: column;
   padding: 25px;
   padding-top: 100px; /*form will be same in desktop */
+  /* visibility: visible; */
 }
 
 button {
@@ -198,11 +199,11 @@ small {
 
 .confirmation-message {
   visibility: hidden;
-  /* position: absolute; */
+  position: absolute;
   margin: auto;
-  width: 40%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 @media screen and (min-width: 1440px) {
@@ -238,5 +239,9 @@ small {
     left: 50%;
     top: 30%;
     background-repeat: no-repeat; /* leave this */
+  }
+
+  .confirmation-message {
+    width: 30%;
   }
 }

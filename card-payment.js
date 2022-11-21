@@ -7,7 +7,7 @@ const confirmButton = document.querySelector("#confirm-button");
 
 const errorMessage = document.querySelector("#error-border");
 const showError = document.querySelector("#error");
-
+const inputs = document.querySelectorAll("input");
 const form = document.querySelector("#form");
 
 // if someone fucks up the form, show these error features
@@ -54,11 +54,9 @@ cardName.oninput = () => {
 cardNumber.oninput = () => {
   exampleCardNumber.innerText = cardNumber.value;
   cardNumber.classList.remove("error");
-  // exampleCardNumber.innerText.replace(" ")
+  // exampleCardNumber.innerText.push(" ")
   // space numbers out every 4 numbers
 };
-// const regExp = /d{4}[ -]?\d{4}[ -]?\d{4}[ -]?\d{4}/g;
-// /^4[0-9]{12}(?:[0-9]{3})?$/g;
 
 cardMonth.oninput = () => {
   exampleCardMonth.innerText = cardMonth.value;
@@ -78,7 +76,11 @@ cardCVC.oninput = () => {
 // if information correct, hide form/display confirmation message
 const confirmationMessage = document.querySelector("#confirmation-message");
 
+//IF ALL CONDITIONS ARE MET //
+// if (inputs.innerText =
 confirmButton.addEventListener("click", function (e) {
   form.style.visibility = "hidden";
   confirmationMessage.style.visiblity = "visible";
 });
+
+inputs.style.visibility = "visible";
