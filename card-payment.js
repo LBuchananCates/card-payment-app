@@ -54,9 +54,15 @@ cardName.oninput = () => {
 cardNumber.oninput = () => {
   exampleCardNumber.innerText = cardNumber.value;
   cardNumber.classList.remove("error");
+
   // exampleCardNumber.innerText.push(" ")
   // space numbers out every 4 numbers
 };
+function limit(element, maxChars) {
+  if (element.value.length > maxChars) {
+    element.value = element.value.substr(0, maxChars);
+  }
+}
 
 cardMonth.oninput = () => {
   exampleCardMonth.innerText = cardMonth.value;
@@ -73,14 +79,10 @@ cardCVC.oninput = () => {
   cardCVC.classList.remove("error");
 };
 
-// if information correct, hide form/display confirmation message
-const confirmationMessage = document.querySelector("#confirmation-message");
-
 //IF ALL CONDITIONS ARE MET //
 // if (inputs.innerText =
 confirmButton.addEventListener("click", function (e) {
-  form.style.visibility = "hidden";
-  confirmationMessage.style.visiblity = "visible";
+  const confirmationMessage = document.querySelector("#confirmation-message");
+  form.style.display = "none";
+  confirmationMessage.style.display = "flex";
 });
-
-inputs.style.visibility = "visible";

@@ -57,8 +57,8 @@
           name="card-number"
           id="card-number"
           placeholder="e.g. 1234 5678 9123 0000"
-          minlength="15"
-          maxlength="16"
+          onkeydown="limit(this, 16);"
+          onkeyup="limit(this, 16);"
         />
       </div>
 
@@ -92,7 +92,8 @@
                 name="CVC"
                 id="CVC"
                 placeholder="e.g. 123"
-                maxlength="3"
+                onkeydown="limit(this, 3)"
+                onkeyup="limit(this, 3)"
               />
             </div>
             <small id="error" class="error-message">Can't be blank</small>

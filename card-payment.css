@@ -198,10 +198,9 @@ small {
 }
 
 .confirmation-message {
-  visibility: hidden;
-  position: absolute;
-  margin: auto;
-  display: flex;
+  display: none;
+  margin: 23% auto;
+  margin-top: 500px;
   flex-direction: column;
   align-items: center;
 }
